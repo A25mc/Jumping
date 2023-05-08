@@ -5,10 +5,10 @@ using UnityEngine;
 public class SquareCtrl : MonoBehaviour
 {
     Rigidbody2D rigid2d;
-    float jumpf;
-    float maxjumpf = 600.0f;
-    float warkf = 30.0f;
-    float maxwalkspeed = 2.0f;
+    //float jumpf;
+    //float maxjumpf = 600.0f;
+    float warkf = 100.0f;
+    float maxwalkspeed = 3.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +20,7 @@ public class SquareCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Input.GetKey(KeyCode.Space))
         {
             this.jumpf += 50.0f;
@@ -38,7 +39,8 @@ public class SquareCtrl : MonoBehaviour
                 jumpf = 0;
             }
         }
-
+        */
+        
         int direction = 0;
         if (Input.GetKey(KeyCode.A))
         {
