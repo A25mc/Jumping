@@ -8,7 +8,7 @@ public class SquareCtrl : MonoBehaviour
     //float jumpf;
     //float maxjumpf = 600.0f;
     float warkf = 100.0f;
-    float maxwalkspeed = 3.0f;
+    float maxwalkspeed = 2.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -42,13 +42,18 @@ public class SquareCtrl : MonoBehaviour
         */
         
         int direction = 0;
+        float speedx = Mathf.Abs(this.rigid2d.velocity.x);
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            speedx = 0.0f;
+        }
+
         if (Input.GetKey(KeyCode.A))
         {
             direction = -1;
         }
         
-        float speedx=Mathf.Abs(this.rigid2d.velocity.x);
-
         if (speedx < this.maxwalkspeed)
         {
             this.rigid2d.AddForce(transform.right * direction * this.warkf);
